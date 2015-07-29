@@ -7,13 +7,15 @@ function recordText () {
         console.log("enter keyup\n");
         var txt = $("#addbox").val();
         console.log(txt);
-        createData(txt);
+        displayNewItem(createData(txt));
+        $('#addbox').val('');
    }});
     $(document).on("click", "#addbutton", function(e) {
         console.log("addbutton clicked\n");
         var txt = $("#addbox").val();
         console.log(txt);
-        createData(txt);
+        displayNewItem(createData(txt));
+        $('#addbox').val('');
     });
     
 }
@@ -35,11 +37,22 @@ function createData (text) {
     console.log("appending new item\n");
     list.push(newItem);
     console.log(list, "\n");
+    return newItem;
 }
 
 
 $(document).ready(function() {
+    $("#addbox").val("").focus();
     recordText();
+    if (list.length == 0) {
+        $('.notable').hide;
+        console.log("Table hidden");
+    }
 });
 
-/* have box in focus on page load */
+
+function displayNewItem(newItem) {
+    var idx = list.length;
+    var itemElement = $("<li class='notable table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + newItem.description + "</span> </li>");
+    $( ".notable").append(itemElement);
+}
