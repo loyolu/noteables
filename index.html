@@ -14,29 +14,33 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="function.js"></script>
 </head>
 <body>
 <div class="container">
-	<h1>Go Ahead! Take Notes <i class="fa fa-smile-o"></i></h1>
-	<h3>This is a simple web app to help you make notes to yourself</h3>
+	
+	<h1><span id="pg-heading">Notables</span> <i class="fa fa-pencil-square-o"></i><h1>
+	<h3>Go Ahead & Make Notes!</h3>
+	<h4>Got to many tabs open? Just paste the links here and you can revisit those pages later.</h4><br>
+    
     <div class="input-group">
 		<input id="addbox" type="text" placeholder="Type your note here" class="form-control"> 
       	<span class="input-group-btn">
         	<button id="addbutton" type="button" class="btn btn-success">Add!</button>
   		</span> 
     </div>
-    <div>
+
+    <div id="table-div">
     	<br>
     	<table class="table-striped notable">
-    	<th>Notes</th>
+    		<th>Notes</th>
     	</table>
     </div>
 
 </div>
 </body>
-
-
 </html>
 
 <!-- 

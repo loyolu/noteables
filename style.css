@@ -1,0 +1,20 @@
+
+
+h1 {
+	font-family: Century Gothic, sans-serif;
+	font-size: 4em;
+	font-weight: bold; 
+}
+
+.fa-pencil-square-o {
+	color: #b37b4e;
+}
+
+#pg-heading {
+	color: #3e8f3e;
+}
+
+#addbutton {
+	background-image: none;
+	background-color: #3e8f3e;
+}

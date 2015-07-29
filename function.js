@@ -7,6 +7,7 @@ function recordText () {
         console.log("enter keyup\n");
         var txt = $("#addbox").val();
         console.log(txt);
+        $('#table-div').show;
         displayNewItem(createData(txt));
         $('#addbox').val('');
    }});
@@ -14,6 +15,7 @@ function recordText () {
         console.log("addbutton clicked\n");
         var txt = $("#addbox").val();
         console.log(txt);
+        $('#table-div').show;
         displayNewItem(createData(txt));
         $('#addbox').val('');
     });
@@ -44,8 +46,8 @@ function createData (text) {
 $(document).ready(function() {
     $("#addbox").val("").focus();
     recordText();
-    if (list.length == 0) {
-        $('.notable').hide;
+    if (list.length === 0) {
+        $('#table-div').hide;
         console.log("Table hidden");
     }
 });
