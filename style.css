@@ -7,14 +7,19 @@ h1 {
 }
 
 .fa-pencil-square-o {
-	color: #b37b4e;
+	color: #b37b4e; /* brown */
 }
 
 #pg-heading {
-	color: #3e8f3e;
+	color: #3e8f3e; /* green */
 }
 
 #addbutton {
 	background-image: none;
-	background-color: #3e8f3e;
+	background-color: #3e8f3e; /* green */
 }
+
+th {
+    background-color: #b37b4e; /* brown */
+    color: white;
+} 

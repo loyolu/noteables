@@ -1,6 +1,7 @@
 var list = [];
 
 $(document).ready(function() {
+    loadData();
     $("#addbox").val("").focus();
     recordEvent();
 });
@@ -11,8 +12,11 @@ function saveData () {
 
 function loadData () {
     list = JSON.parse(localStorage.getItem("notes"));
-    if (list === null)
-     list = []
+    if (list === null) {
+        list = []
+        $('table').hide();
+        console.log("table hidden");
+    }
 }
 
 function recordEvent () {
