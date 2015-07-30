@@ -25,7 +25,16 @@
 	<h3>Go Ahead & Make Notes!</h3>
 	<h4>Got too many tabs open? Just paste the links here and you can revisit those pages later.</h4><br>
     
-    <div class="input-group">
+    <div class="col-md-8 col-md-offset-2">
+	<div id="alert-empty-input" class="alert alert-warning" role="alert">
+	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+	  <span class="sr-only">Error:</span>
+	  Enter text in the box below
+	</div>
+	</div>
+
+
+    <div class="input-group col-md-12">
 		<input id="addbox" type="text" placeholder="Type your note here" class="form-control"> 
       	<span class="input-group-btn">
         	<button id="addbutton" type="button" class="btn btn-success">Add!</button>

@@ -21,3 +21,8 @@ th {
     background-color: #b37b4e; /* brown */
     color: white;
 } 
+
+.alert {
+	padding: 9px;
+    height: 34px;
+}

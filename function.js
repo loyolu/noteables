@@ -2,6 +2,7 @@ var list = [];
 
 $(document).ready(function() {
     loadData();
+    $("#alert-empty-input").hide();
     $("#addbox").val("").focus();
     recordEvent();
 });
@@ -36,10 +37,10 @@ function recordEventHelper () {
     console.log("event recorded on page: enter keyup or addbutton clicked\n");
     var txt = $("#addbox").val();
     if (txt == '') {
-        console.log("no text\n")
-        $('.form-control:focus').css('background-color: #ff4343');
         $('#addbox').val(''); 
         $("#addbox").val("").focus();
+        $("#alert-empty-input").show();
+        console.log("err: no text; empty input alert shown \n");
         return;
     }
     else{
