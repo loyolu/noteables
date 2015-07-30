@@ -17,6 +17,9 @@ function loadData () {
         $('table').hide();
         console.log("table hidden");
     }
+    else {
+        displayItems(list);
+    }
 }
 
 function recordEvent () {
@@ -44,7 +47,7 @@ function recordEventHelper () {
     createItem(txt);
     console.log("Item created\n");
     $('table').show();   
-    displayItems(list);
+    displayItem(list);
     $('#addbox').val('');
     saveData (); 
     };
@@ -74,15 +77,21 @@ function createItem (text) {
     return newItem.id;
 }
 
-function displayItems (arr) {
-    var i = arr.length-1;
-    var itemElement = ("<tr> <td class='table-view-cell' id=item'" +"-"+ i + "'>" + "<span class='description'>" + arr[i].description + "</span> </td> </tr>");
+function displayItem (arr) {
+    var idx = arr.length-1;
+    var itemElement = ("<tr> <td class='table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + arr[idx].description + "</span> </td> </tr>");
     $("table").append(itemElement);
-    console.log("displaying item #" + i + "\n");    
-  //document.write("<td>" + arr[i].description + "</td></tr>");
+    console.log("displaying item #" + idx + "\n");    
 }
 
-// load prev data
-// change focus of input box to red (and shake) if input = ''; do not add to list
+function displayItems (arr) {
+    for (var i = 0; i < arr.length; i++) {
+        var itemElement = ("<tr> <td class='table-view-cell' id=item'" +"-"+ i + "'>" + "<span class='description'>" + arr[i].description + "</span> </td> </tr>");
+        $("table").append(itemElement);
+        console.log("displaying item #" + i + "\n"); 
+    };
+}
 
+loadData ();
 
+// change focus of input box to red (and shake) if input = ''
