@@ -56,16 +56,9 @@ function createItem (text) {
     return newItem.id;
 }
 
-function displayItem(arr) {
-    var idx = arr.length-1;
-    document.write("<li class='notable table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + arr[idx].description + "</span> </li>");
-    //$( ".notable").append(itemElement);
-    console.log("displaying item #" + idx + "\n")    
-}
-
 function displayItems (arr) {
     var i = arr.length-1;
-    var itemElement = ("<li class='table-view-cell' id=item'" +"-"+ i + "'>" + "<span class='description'>" + arr[i].description + "</span> </li>");
+    var itemElement = ("<tr> <td class='table-view-cell' id=item'" +"-"+ i + "'>" + "<span class='description'>" + arr[i].description + "</span> </td> </tr>");
     $("table").append(itemElement);
     console.log("displaying item #" + i + "\n");    
   //document.write("<td>" + arr[i].description + "</td></tr>");
