@@ -34,10 +34,18 @@ function recordEventHelper () {
     var txt = $("#addbox").val();
     console.log(txt + "\n");
     createItem(txt);
-    console.log("Item created\n");   
+    console.log("Item created\n");
+    $('table').show();   
     displayItems(list);
     $('#addbox').val('');
     saveData (); 
+}
+
+function noText (txt) {
+    if (txt == '') {
+        $('.form-control:focus').css('background-color: #ff4343');s
+        $('#addbox').val(''); 
+    };
 }
 
 function generateId() {
