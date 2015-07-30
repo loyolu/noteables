@@ -32,6 +32,14 @@ function recordEvent () {
 function recordEventHelper () {
     console.log("event recorded on page: enter keyup or addbutton clicked\n");
     var txt = $("#addbox").val();
+    if (txt == '') {
+        console.log("no text\n")
+        $('.form-control:focus').css('background-color: #ff4343');
+        $('#addbox').val(''); 
+        $("#addbox").val("").focus();
+        return;
+    }
+    else{
     console.log(txt + "\n");
     createItem(txt);
     console.log("Item created\n");
@@ -39,13 +47,11 @@ function recordEventHelper () {
     displayItems(list);
     $('#addbox').val('');
     saveData (); 
+    };
 }
 
 function noText (txt) {
-    if (txt == '') {
-        $('.form-control:focus').css('background-color: #ff4343');s
-        $('#addbox').val(''); 
-    };
+
 }
 
 function generateId() {
@@ -75,3 +81,8 @@ function displayItems (arr) {
     console.log("displaying item #" + i + "\n");    
   //document.write("<td>" + arr[i].description + "</td></tr>");
 }
+
+// load prev data
+// change focus of input box to red (and shake) if input = ''; do not add to list
+
+
