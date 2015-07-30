@@ -2,12 +2,11 @@ var list = [];
 
 $(document).ready(function() {
     $("#addbox").val("").focus();
-    loadData();
     recordEvent();
 });
 
 function saveData () {
-    localStorage.setItem("notes",JSON.stringify(list));
+    localStorage.setItem("notes", JSON.stringify(list));
 }
 
 function loadData () {
@@ -29,7 +28,7 @@ function recordEvent () {
 function recordEventHelper () {
     console.log("event recorded on page: enter keyup or addbutton clicked\n");
     var txt = $("#addbox").val();
-    console.log(txt);
+    console.log(txt + "\n");
     createItem(txt);
     console.log("Item created\n");   
     displayItems(list);
@@ -59,14 +58,15 @@ function createItem (text) {
 
 function displayItem(arr) {
     var idx = arr.length-1;
-    var itemElement = $("<li class='notable table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + arr[idx].description + "</span> </li>");
-    $( ".notable").append(itemElement);
+    document.write("<li class='notable table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + arr[idx].description + "</span> </li>");
+    //$( ".notable").append(itemElement);
     console.log("displaying item #" + idx + "\n")    
 }
 
 function displayItems (arr) {
-    for (var i=0; i<arr.length; i++) {
-  document.write("<li class='notable table-view-cell' id=item'" +"-"+ i + "'>" + "<span class='description'>" + arr[i].description + "</span> </li>");
+    var i = arr.length-1;
+    var itemElement = ("<li class='table-view-cell' id=item'" +"-"+ i + "'>" + "<span class='description'>" + arr[i].description + "</span> </li>");
+    $("table").append(itemElement);
+    console.log("displaying item #" + i + "\n");    
   //document.write("<td>" + arr[i].description + "</td></tr>");
-}
 }
