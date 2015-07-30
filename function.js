@@ -7,12 +7,10 @@ $(document).ready(function() {
 });
 
 function saveData () {
-    // save data to local storage
     localStorage.setItem("notes",JSON.stringify(list));
 }
 
 function loadData () {
-    // load data from local storage
     list = JSON.parse(localStorage.getItem("notes"));
     if (list === null)
      list = []
@@ -33,9 +31,10 @@ function recordEventHelper () {
     var txt = $("#addbox").val();
     console.log(txt);
     createItem(txt);
+    console.log("Item created\n");   
     displayItems(list);
-    $('#addbox').val('');        
-    console.log("Item created\n");    
+    $('#addbox').val('');
+    saveData (); 
 }
 
 function generateId() {
@@ -58,10 +57,16 @@ function createItem (text) {
     return newItem.id;
 }
 
-function displayItems(arr) {
-    for (var idx = 0; idx < arr.length; idx++) {
-        var itemElement = $("<li class='notable table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + arr[idx].description + "</span> </li>");
-        $( ".notable").append(itemElement);
-        console.log("displaying item #" + idx + "\n")    };
+function displayItem(arr) {
+    var idx = arr.length-1;
+    var itemElement = $("<li class='notable table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + arr[idx].description + "</span> </li>");
+    $( ".notable").append(itemElement);
+    console.log("displaying item #" + idx + "\n")    
 }
-loadData ();
+
+function displayItems (arr) {
+    for (var i=0; i<arr.length; i++) {
+  document.write("<li class='notable table-view-cell' id=item'" +"-"+ i + "'>" + "<span class='description'>" + arr[i].description + "</span> </li>");
+  //document.write("<td>" + arr[i].description + "</td></tr>");
+}
+}
