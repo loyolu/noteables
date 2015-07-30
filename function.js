@@ -2,8 +2,6 @@ var list = [];
 
 $(document).ready(function() {
     loadData();
-    $("#alert-empty-input").hide();
-    $("#addbox").val("").focus();
     recordEvent();
 });
 
@@ -13,6 +11,8 @@ function saveData () {
 
 function loadData () {
     list = JSON.parse(localStorage.getItem("notes"));
+    $("#alert-empty-input").hide();
+    $("#addbox").val("").focus();
     if (list === null) {
         list = []
         $('table').hide();
@@ -43,19 +43,16 @@ function recordEventHelper () {
         console.log("err: no text; empty input alert shown \n");
         return;
     }
-    else{
-    console.log(txt + "\n");
-    createItem(txt);
-    console.log("Item created\n");
-    $('table').show();   
-    displayItem(list);
-    $('#addbox').val('');
-    saveData (); 
+    else {
+        $("#alert-empty-input").hide();
+        console.log(txt + "\n");
+        createItem(txt);
+        console.log("Item created\n");
+        $('table').show();   
+        displayItem(list);
+        $('#addbox').val('');
+        saveData (); 
     };
-}
-
-function noText (txt) {
-
 }
 
 function generateId() {
