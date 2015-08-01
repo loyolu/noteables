@@ -77,7 +77,9 @@ function createItem (text) {
 
 function displayItem (arr) {
     var idx = arr.length-1;
-    var itemElement = ("<tr> <td class='table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + arr[idx].description + "</span> </td> </tr>");
+    var noteText = "<td class='table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + arr[idx].description + "</span> </td>";
+    var editButton = "<td class='edit-btn' id='btn'" +"-" + idx + "> <button type='button' class='btn btn-default'>Edit</button>";
+    var itemElement = ("<tr>" + noteText + editButton + "</tr>");
     $("table").append(itemElement);
     console.log("displaying item #" + idx + "\n");    
 }
@@ -91,3 +93,4 @@ function displayItems (arr) {
 }
 
 loadData ();
+//edit btn for old data on pg load
