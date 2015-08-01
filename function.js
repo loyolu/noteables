@@ -91,5 +91,3 @@ function displayItems (arr) {
 }
 
 loadData ();
-
-// change focus of input box to red (and shake) if input = ''
