@@ -78,8 +78,8 @@ function createItem (text) {
 function displayItem (arr) {
     var idx = arr.length-1;
     var noteText = "<td class='table-view-cell' id=item'" +"-"+ idx + "'>" + "<span class='description'>" + arr[idx].description + "</span> </td>";
-    var editButton = "<td class='edit-btn' id='btn'" +"-" + idx + "> <button type='button' class='btn btn-default'>Edit</button>";
-    var deleteButton = "<td class='edit-btn' id='btn'" +"-" + idx + "> <button type='button' class='btn btn-default'>Delete</button>";
+    var editButton = "<td class='edit-btn' id='edit-btn'" +"-" + idx + "> <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Edit</button>";
+    var deleteButton = "<td class='delete-btn' id='delete-btn'" +"-" + idx + "> <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Delete</button>";
     var itemElement = ("<tr>" + noteText + editButton + deleteButton + "</tr>");
     $("table").append(itemElement);
     console.log("displaying item #" + idx + "\n");    
@@ -87,8 +87,11 @@ function displayItem (arr) {
 
 function displayItems (arr) {
     for (var i = 0; i < arr.length; i++) {
-        var itemElement = ("<tr> <td class='table-view-cell' id=item'" +"-"+ i + "'>" + "<span class='description'>" + arr[i].description + "</span> </td> </tr>");
-        $("table").append(itemElement);
+    var noteText = "<td class='table-view-cell' id=item'" +"-"+ i + "'>" + "<span class='description'>" + arr[i].description + "</span> </td>";
+    var editButton = "<td class='edit-btn' id='edit-btn'" +"-" + i + "> <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Edit</button>";
+    var deleteButton = "<td class='delete-btn' id='delete-btn'" +"-" + i + "> <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Delete</button>";
+    var itemElement = ("<tr>" + noteText + editButton + deleteButton + "</tr>");        
+    $("table").append(itemElement);
         console.log("displaying item #" + i + "\n"); 
     };
 }
